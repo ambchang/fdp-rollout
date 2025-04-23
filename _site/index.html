@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>NHS FDP Rollout information</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information about the FDP rollout across all NHS trusts and ICBs">
+  <meta name="theme-color" content="#CF4C4C">
+  <meta property="og:title" content="Information about the FDP rollout across all NHS trusts and ICBs"/>
+  <meta property="og:description" content="Find out how the FDP rollout is going across NHS trusts and ICBs. Help contribute to this shared."/>
+  <meta property="og:url" content="https://spaces.commonknowledge.coop"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="NHS FDP Rollout Information"/>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap" rel="stylesheet">
+  <style>
+  html {
+    position: relative;
+    background: #FFFBFD;
+    height: 100%;
+  }
+
+  body {
+    position: relative;
+    box-sizing: border-box;
+    padding: 1rem;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 120%;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.25px;
+  }
+
+  h2 {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: inherit;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-weight: inherit;
+    font-size: inherit;
+  }
+
+  h1, h2, h3, p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 42rem) {
+    body {
+      padding: 2rem;
+      font-size: 16px;
+    }
+  }
+
+  /** Layout */
+
+  .columns {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100%;;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .columns > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .mobile-expand {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .flex-space {
+    flex: 1;
+    min-height: 3rem;
+  }
+
+  .mobile-stretch {
+    align-self: stretch;
+  }
+
+  .hidden {
+    display: hidden;
+  }
+
+  @media (min-width: 42rem) {
+    .mobile-stretch {
+      align-self: flex-start;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .columns {
+      flex-direction: row;
+    }
+
+    .columns > * {
+      position: relative;
+    }
+
+    .columns > .small {
+      max-width: 400px;
+    }
+
+    .columns > *:not(:last-child) {
+      margin-bottom: unset;
+      margin-right: 6rem;
+    }
+
+    .columns > .flex {
+      flex: 1;
+    }
+  }
+
+
+  /** Components */
+
+  .button {
+    display: inline-block;
+    background: #CF4C4C;
+    border-radius: 3px;
+    color: inherit;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    min-width: 9rem;
+    text-align: center;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .button:hover {
+    opacity: 0.8;
+  }
+
+  a {
+    color: inherit;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  .stretch-in {
+    overflow: hidden;
+    transition: max-height 500ms ease-out, opacity 500ms ease-in-out;
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .stretch-in.hidden {
+    max-height: 0px;
+    opacity: 0;
+  }
+
+  .airtable-embed {
+    height: calc(100vh - 2rem)
+  }
+
+  @media (min-width: 64em) {
+    .airtable-embed {
+      height: unset;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="columns">
+    <section class="small rows">
+      <h1>The state of the Federated Data Platform (FDP) rollout</h1>
+      <p>
+        This site is part of the <a href="https://www.medact.org/2024/resources/toolkits/no-palantir-in-the-nhs-campaign-toolkit/">'No Palantir in the NHS'</a> campaign.
+      </p>
+      <p>
+        The table shows where each NHS trust and ICB is at with the rollout of the FDP. The information is collectively maintained and is intended to help anyone part of the campaign understand how the rollout is going in their area.
+      </p>
+      <p>
+        If you have information to share, make a submission. For any other questions or to give feedback on this site <a href="mailto:hw4fp.uk@protonmail.com">email the team directly</a>.
+      </p>
+      <p>
+        <a class="button mobile-stretch" href="https://forms.fillout.com/t/fVeENNvTr1us" target="_blank">
+          Submit an update
+        </a>
+      </p>
+
+      <span class="flex-space"></span>
+
+   <!--   <div>
+        <script>
+        function showAbout(event) {
+          event.preventDefault()
+          document.getElementById('about-us').classList.toggle('hidden')
+        }
+        </script>
+
+        <p>
+          <a href="#" onclick="showAbout(event)">
+            About Common Knowledge
+          </a>
+        </p>
+
+        <div id="about-us" class="stretch-in hidden">
+          <p>
+            We’re a not-for-profit workers cooperative. Working directly with grassroots activists, we design digital tools that make radical change possible.
+          </p>
+
+          <p>
+            Please contact us if you’d like to edit a listing or give us feedback:<br>
+            <a target="_blank" href="mailto:spaces@commonknowledge.coop">spaces@commonknowledge.coop</a><br />
+          </p>
+        </div> 
+      </div> -->
+    </section>
+    <iframe class="airtable-embed flex mobile-expand" src="https://airtable.com/embed/appQMz4poTlgHWlHQ/shrYx305Mdy9gEZft?layout=card&viewControls=on" frameborder="0" onmousewheel="" style="background: transparent; border: 1px solid #ccc;"></iframe>
+  </div>
+
+</body>
+</html>
